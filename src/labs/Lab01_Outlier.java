@@ -11,7 +11,7 @@ import java.util.Scanner;
  * @author Michael O'Neill
  */
 
-public class Topic1_Outlier {
+public class Lab01_Outlier {
 
     public static void runSolution() {
 
