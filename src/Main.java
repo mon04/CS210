@@ -1,5 +1,5 @@
-import practice.*;
-//import labs.*;
+import labs.*;
+//import practice.*;
 
 public class Main {
 
