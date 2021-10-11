@@ -50,8 +50,8 @@ public class Lab02 {
                 if (--n == 0) {
                     return i;
                 }
-            }
 
+            }
         }
     }
 

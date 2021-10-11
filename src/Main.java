@@ -4,6 +4,6 @@ import labs.*;
 public class Main {
 
     public static void main(String[] args) {
-        Lab02.runSolution();
+        Lab03.runSolution();
     }
 }
