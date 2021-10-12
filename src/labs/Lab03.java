@@ -15,16 +15,16 @@ public class Lab03 {
 
     public static int primeDistance(int n) {
 
-        int sub = n-1;
-        while(!isPrime(sub)) {
-            sub--;
+        int low = n-1;
+        while(!isPrime(low)) {
+            low--;
         }
 
         while(!isPrime(n)) {
             n++;
         }
 
-        return (n-sub);
+        return (n-low+1);
     }
 
     public static boolean isPrime(int n) {
