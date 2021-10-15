@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Lab01 {
     
-    public static void runSolution() {
+    public static void main() {
 
         Scanner myscanner = new Scanner(System.in);
         //System.out.println("Enter three numbers:");
@@ -57,10 +57,5 @@ public class Lab01 {
                 }
             }
         }
-    }
-    
-    public static void main(String args[] ) throws Exception {
-        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
-        runSolution();
     }
 }

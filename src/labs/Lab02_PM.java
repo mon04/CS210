@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Lab02_PM {
 
-    public static void runSolution() {
+    public static void main() {
 
         Scanner scan = new Scanner(System.in);
         int one = Math.abs(scan.nextInt());
