@@ -16,12 +16,12 @@ public class Lab03 {
 
     public static int primeDistance(int n) {
 
-        int low = n-1;
+        int low = n;
         while(!isPrime(low)) {
             low--;
         }
 
-        while(!isPrime(n)) {
+        while(!isPrime(n+1)) {
             n++;
         }
 
@@ -32,6 +32,7 @@ public class Lab03 {
         for(int i = 2; i < n/2; i++) {
             if(n%i == 0) return false;
         }
+        //No even divisor in range[2, n/2], so n is prime
         return true;
     }
 }
