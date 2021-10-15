@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Lab03 {
 
-    public static void main() {
+    public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();

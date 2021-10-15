@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Lab01 {
     
-    public static void main() {
+    public static void main(String[] args) {
 
         Scanner myscanner = new Scanner(System.in);
         //System.out.println("Enter three numbers:");
