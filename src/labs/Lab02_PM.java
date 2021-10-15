@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Lab02_PM {
 
     public static void main(String[] args) {
+        //Input: (int, int, int)
 
         Scanner scan = new Scanner(System.in);
         int one = Math.abs(scan.nextInt());

@@ -5,6 +5,7 @@ import java.util.*;
 public class Lab01 {
     
     public static void main(String[] args) {
+        //Input: (int, int, int)
 
         Scanner myscanner = new Scanner(System.in);
         //System.out.println("Enter three numbers:");

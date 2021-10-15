@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Lab03 {
 
     public static void main(String[] args) {
+        //Input: int
 
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
