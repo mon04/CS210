@@ -1,4 +1,4 @@
-## Lab 1
+## Lab 1 - Find the outlier
 *28/09/2021*
 
 ### Problem Statement
