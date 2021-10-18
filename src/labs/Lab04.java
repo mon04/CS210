@@ -18,7 +18,7 @@ public class Lab04 {
         for(int i = 0; i < sims; i++) {
 
             int[] bdays = new int[365];
-            //each bdays[i] will represent amount ppl in class whose bday is on the i'th day of year
+            //bdays[i] = amt ppl in class whose bday is on the i'th day of year
 
             for (int j = 0; j < classSize; j++) {
                 int randomDay = (int) (Math.random() * 365);
