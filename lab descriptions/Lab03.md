@@ -14,7 +14,7 @@ The distance between the preceeding and subsequent prime number at *N*.
 2 ≤ *N* ≤ 1000
 
 ### Sample Input
-10
+```10```
 
 ### Sample Output
-4
+```4```
