@@ -1,4 +1,4 @@
-## Lab 2
+## Lab 2 - LCM
 *5/10/2021*
 
 ### Problem Statement
