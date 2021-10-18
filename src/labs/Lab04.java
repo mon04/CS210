@@ -17,21 +17,21 @@ public class Lab04 {
 
         for(int i = 0; i < sims; i++) {
 
-            int[] bdays = new int[365];
-            //bdays[i] = amt ppl in class whose bday is on the i'th day of year
-
+            //Randomly distribute birthdays for current sim
+            int[] bdays = new int[365]; //bdays[i] = amt ppl in class whose bday is on the i'th day of year
             for (int j = 0; j < classSize; j++) {
                 int randomDay = (int) (Math.random() * 365);
                 bdays[randomDay]++;
             }
 
+            //Conduct the test for current sim:
             if(enoughStudentsHaveSameBday(bdays, x)) {
                 simsPassed++;
             }
 
         }
 
-        float prob = (float)(simsPassed)/sims; //Probability is sims passes divided by total sims
+        float prob = (float)(simsPassed)/sims; //Probability is amt sims passed divided by total amt sims
         System.out.println((int)Math.rint(prob*100)); //Print probability represented as a percentage
     }
 
