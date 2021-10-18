@@ -8,7 +8,7 @@ public class Lab04 {
         //Input: int
 
         Scanner scan = new Scanner(System.in);
-        int classSize = scan.nextInt(); //Amount students in class
+        int classSize = scan.nextInt();
         int x = scan.nextInt(); //Min amount of matches required to pass a sim
         scan.close();
 
@@ -16,8 +16,7 @@ public class Lab04 {
         if(classSize < x || classSize == 0) {
             System.out.println(0);
             return;
-        }
-        if(x == 1) {
+        } else if(x == 1) {
             System.out.println(100);
             return;
         }
@@ -51,4 +50,5 @@ public class Lab04 {
         }
         return false;
     }
+
 }
