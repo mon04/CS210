@@ -1,3 +1,6 @@
+## Lab 4
+*19/10/2021*
+
 ### Problem Statement
 Given *n* students in a class, how likely is it that some of them share the same birthday? Use a Monte Carlo simulation to determine to the nearest percent the probability that at least *x* number of students in a class of size *n* have the same birthday.
 
