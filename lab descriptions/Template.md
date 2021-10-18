@@ -1,4 +1,4 @@
-## Lab X
+## Lab X - Title
 *dd/mm/yyyy*
 
 ### Problem Statement
