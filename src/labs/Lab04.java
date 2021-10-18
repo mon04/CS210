@@ -12,16 +12,25 @@ public class Lab04 {
         int x = scan.nextInt(); //Min amount of matches required to pass a sim
         scan.close();
 
+        //Catch cases with obvious results
+        if(classSize < x || classSize == 0) {
+            System.out.println(0);
+            return;
+        }
+        if(x == 1) {
+            System.out.println(100);
+            return;
+        }
+
         int sims = 100000;
         int simsPassed = 0; //Stores how many simulations pass the test
 
         for(int i = 0; i < sims; i++) {
 
-            //Randomly distribute birthdays for current sim
-            int[] bdays = new int[365]; //bdays[i] = amt ppl in class whose bday is on the i'th day of year
+            //Randomly distribute birthdays
+            int[] bdays = new int[365];
             for (int j = 0; j < classSize; j++) {
-                int randomDay = (int) (Math.random() * 365);
-                bdays[randomDay]++;
+                bdays[(int)(Math.random()*365)]++;
             }
 
             //Conduct the test for current sim:
@@ -31,12 +40,12 @@ public class Lab04 {
 
         }
 
-        float prob = (float)(simsPassed)/sims; //Probability is amt sims passed divided by total amt sims
+        float prob = (float)(simsPassed)/sims;
         System.out.println((int)Math.rint(prob*100)); //Print probability represented as a percentage
+
     }
 
     public static boolean enoughStudentsHaveSameBday(int[] bdays, int min) {
-        //Look at each day, check if any of them have enough students with that bday
         for (int count : bdays) {
             if (count >= min) return true;
         }
