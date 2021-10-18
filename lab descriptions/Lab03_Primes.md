@@ -1,4 +1,4 @@
-## Lab 3
+## Lab 3 - Primes
 *12/10/2021*
 
 ### Problem Statement
