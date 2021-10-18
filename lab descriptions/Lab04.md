@@ -16,7 +16,7 @@ An integer between 0 and 100, which is the % probability that *x* students in a 
 1 ≤ *x* ≤ 10
 
 ### Sample Input
-20 2
+```20 2```
 
 ### Sample Output
-41
+```41```
