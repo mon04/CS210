@@ -32,7 +32,7 @@ public class Lab04 {
         }
 
         float prob = (float)(simsPassed)/sims; //Probability is sims passes divided by total sims
-        System.out.println(Math.rint(prob*100)); //Print probability represented as a percentage
+        System.out.println((int)Math.rint(prob*100)); //Print probability represented as a percentage
     }
 
     public static boolean enoughStudentsHaveSameBday(int[] bdays, int min) {
