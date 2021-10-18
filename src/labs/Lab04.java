@@ -13,7 +13,7 @@ public class Lab04 {
         scan.close();
 
         //Catch cases with obvious results
-        if(classSize < x || classSize == 0) {
+        if(classSize == 0 || classSize < x) {
             System.out.println(0);
             return;
         } else if(x == 1) {
