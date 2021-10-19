@@ -34,4 +34,4 @@
 
 <p><strong>Sample Output</strong></p>
 
-<pre>41    (the probability that two students in a class of size 20 share the same birthday is 41%)</pre>
+<pre>41</pre>    (the probability that two students in a class of size 20 share the same birthday is 41%)
