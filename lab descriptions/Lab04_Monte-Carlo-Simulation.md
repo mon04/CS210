@@ -1,6 +1,6 @@
 <h3>Lab 4 - Monte Carlo Simulation</h3>
 <em>19/10/2021</em>
-
+<p></p>
 <p><strong>Input Format</strong></p>
 <p>Given <em>n </em>students in a class, how likely is it that some of them share the same birthday? Use a Monte Carlo simulation to determine to the nearest percent the probability that at least <em>x </em>number of students in a class of size <em>n </em>have the same birthday.</p>
 
