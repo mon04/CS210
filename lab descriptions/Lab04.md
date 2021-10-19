@@ -1,22 +1,37 @@
-## Lab 4
+## Lab 4 - Monte Carlo Birthday Problem
 *19/10/2021*
 
 ### Problem Statement
-Given *n* students in a class, how likely is it that some of them share the same birthday? Use a Monte Carlo simulation to determine to the nearest percent the probability that at least *x* number of students in a class of size *n* have the same birthday.
+<p>Given <em>n </em>students in a class, how likely is it that some of them share the same birthday? Use a Monte Carlo simulation to determine to the nearest percent the probability that at least <em>x </em>number of students in a class of size <em>n </em>have the same birthday.</p>
 
-### Input format
-Two integers, the first is *n* and the second is *x*
+<p> </p>
 
-### Output format
-An integer between 0 and 100, which is the % probability that *x* students in a class of *n* share the same birthday
+<p><strong>Input Format</strong></p>
 
-### Constraints
-0 ≤ *n* ≤ 1000
+<p>Two integers, the first is <em>n </em>and the second is <em>x</em></p>
 
-1 ≤ *x* ≤ 10
+<p> </p>
 
-### Sample Input
-```20 2```
+<p><strong>Output Format</strong></p>
 
-### Sample Output
-```41```
+<p>An integer between 0 and 100, which is the % probability that <em>x </em>students in a class of <em>n </em>share the same birthday</p>
+
+<p> </p>
+
+<p><strong>Constraints</strong></p>
+
+<p>0≤<em>n</em>≤1000</p>
+
+<p>1≤<em>x</em>≤10</p>
+
+<p> </p>
+
+<p><strong>Sample Input</strong></p>
+
+<p>20 2</p>
+
+<p> </p>
+
+<p><strong>Sample Output</strong></p>
+
+<p>41    (the probability that two students in a class of size 20 share the same birthday is 41%)</p>
