@@ -14,6 +14,15 @@ public class Lab04 {
         int sims = 100000;
         int simsPassed = 0; //Stores how many simulations pass the test
 
+        //Catch cases with obvious results
+        if(classSize == 0 || classSize < x) {
+            System.out.println(0);
+            return;
+        } else if(x == 1) {
+            System.out.println(100);
+            return;
+        }
+
         for(int i = 0; i < sims; i++) {
 
             //Randomly distribute birthdays
