@@ -5,21 +5,11 @@ import java.util.Scanner;
 public class Lab04 {
 
     public static void main(String[] args) {
-        //Input: int
 
         Scanner scan = new Scanner(System.in);
         int classSize = scan.nextInt();
         int x = scan.nextInt(); //Min amount of matches required to pass a sim
         scan.close();
-
-        //Catch cases with obvious results
-        if(classSize == 0 || classSize < x) {
-            System.out.println(0);
-            return;
-        } else if(x == 1) {
-            System.out.println(100);
-            return;
-        }
 
         int sims = 100000;
         int simsPassed = 0; //Stores how many simulations pass the test
