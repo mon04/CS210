@@ -64,8 +64,10 @@ public class Lab05 {
     }
 
     public static void swap(int i, int j, String[] a) {
-        String temp = a[i];
-        a[i] = a[j];
-        a[j] = temp;
+        if(i != j) {
+            String temp = a[i];
+            a[i] = a[j];
+            a[j] = temp;
+        }
     }
 }
