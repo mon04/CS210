@@ -1,5 +1,5 @@
 ## Lab X - Title
-*dd/mm/yyyy*
+*DD/MM/2021*
 
 ### Problem Statement
 <!---Problem Statement here--->
@@ -14,7 +14,11 @@
 -1000 ≤ *N* ≤ 1000
 
 ### Sample Input
-```input```
+```
+input
+```
 
 ### Sample Output
-```output```
+```
+output
+```

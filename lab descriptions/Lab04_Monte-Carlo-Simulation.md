@@ -1,37 +1,28 @@
-<h3>Lab 4 - Monte Carlo Simulation</h3>
-<em>19/10/2021</em>
-<p></p>
-<p><strong>Input Format</strong></p>
-<p>Given <em>n </em>students in a class, how likely is it that some of them share the same birthday? Use a Monte Carlo simulation to determine to the nearest percent the probability that at least <em>x </em>number of students in a class of size <em>n </em>have the same birthday.</p>
+## Lab 4 - Monte Carlo Simulation
+*19/10/21*
 
-<p> </p>
+### Problem Statement
+<!---Problem Statement here--->
+Given *N* students in a class, how likely is it that some of them share the same birthday? Use a Monte Carlo simulation to determine to the nearest percent the probability that at least *x* number of students in a class of size *n* have the same birthday.
 
-<p><strong>Input Format</strong></p>
+### Input format
+<!---Input format here--->
+Two integers, the first is *N*, and the second is *X*
 
-<p>Two integers, the first is <em>n </em>and the second is <em>x</em></p>
+### Output format
+<!---Output format here--->
+An integer between 0 and 100, which is the % probability that *X* students in a class of *N* share the same birthday
 
-<p> </p>
+### Constraints
+-1000 ≤ *N* ≤ 1000
 
-<p><strong>Output Format</strong></p>
+### Sample Input
+```
+20 2
+```
 
-<p>An integer between 0 and 100, which is the % probability that <em>x </em>students in a class of <em>n </em>share the same birthday</p>
+### Sample Output
+```
+41
+```
 
-<p> </p>
-
-<p><strong>Constraints</strong></p>
-
-<p>0≤<em>n</em>≤1000</p>
-
-<p>1≤<em>x</em>≤10</p>
-
-<p> </p>
-
-<p><strong>Sample Input</strong></p>
-
-<pre>20 2</pre>
-
-<p> </p>
-
-<p><strong>Sample Output</strong></p>
-
-<pre>41</pre>    (the probability that two students in a class of size 20 share the same birthday is 41%)
