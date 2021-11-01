@@ -12,16 +12,15 @@ public class Lab05 {
             words[i] = scan.nextLine();
         }
 
+        // Selection-sort
         for(int i=0; i<words.length; i++) {
-            for(int j=1; j<words.length-i; j++) {
-                int s1 = scrabbleScore(words[j-1]);
-                int s2 = scrabbleScore(words[j]);
-                if(s2<s1) {
-                    String swap = words[j-1];
-                    words[j-1] = words[j];
-                    words[j] = swap;
+            int min = i;
+            for(int j=i+1; j<words.length; j++) {
+                if(scrabbleScore(words[j]) < scrabbleScore(words[min])) {
+                    min = j;
                 }
             }
+            swap(i, min, words);
         }
 
         for(String word: words) {
@@ -62,5 +61,11 @@ public class Lab05 {
             //System.out.println(score);
         }
         return score;
+    }
+
+    public static void swap(int i, int j, String[] a) {
+        String temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
     }
 }
