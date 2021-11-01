@@ -14,7 +14,11 @@ An integer representing the LCM of the three. Just use ```System.out.println()``
 -1000 ≤ *A,B,C* ≤ 1000
 
 ### Sample Input
-```15 18 3```
+```
+15 18 3
+```
 
 ### Sample Output
-```90```
+```
+90
+```
