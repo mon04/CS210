@@ -1,5 +1,5 @@
 ## Lab 1 - Find the outlier
-*28/09/2021*
+*28 September 2021*
 
 ### Problem Statement
 The goal is to read in 3 numbers and output the one which is most different from the other two (i.e. the one with the greatest different from the nearest number to it). If there is so single outlier then output ```NA```. You might want to use Math functions like ```Math.min```, ```Math.max``` or ```Math.abs```, or maybe do it your own way.

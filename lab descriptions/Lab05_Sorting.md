@@ -1,5 +1,5 @@
 ## Lab 5 - Sorting
-*02/11/2021*
+*2 November 2021*
 
 ### Problem Statement
 <!---Problem Statement here--->
