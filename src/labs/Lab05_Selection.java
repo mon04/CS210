@@ -23,7 +23,11 @@ public class Lab05_Selection {
         for(int i=0; i<words.length; i++) {
             int min = i;
             for(int j=i+1; j<words.length; j++) {
-                if(scrabbleScore(words[j]) < scrabbleScore(words[min])) {
+
+                int scoreJ = scrabbleScore(words[j]);
+                int scoreMin = scrabbleScore(words[min]);
+
+                if((scoreJ < scoreMin) || (scoreJ == scoreMin && words[j].compareTo(words[min]) < 0)) {
                     min = j;
                 }
             }

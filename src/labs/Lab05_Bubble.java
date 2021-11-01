@@ -22,7 +22,11 @@ public class Lab05_Bubble {
     public static void bubbleSort(String[] words) {
         for(int i = 0; i < words.length; i++) {
             for(int j = 1; j < words.length-i; j++) {
-                if(scrabbleScore(words[j]) < scrabbleScore(words[j-1])) {
+
+                int score1 = scrabbleScore(words[j]);
+                int score2 = scrabbleScore(words[j-1]);
+
+                if((score1 < score2) || (score1 == score2 && words[j].compareTo(words[j-1]) < 0)) {
                     swap(j-1, j, words);
                 }
             }

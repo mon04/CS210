@@ -32,7 +32,7 @@ public class Lab05_Insertion {
             int tempScore = scores[i];
 
             int j = i;
-            while(j>0 && scores[j-1]>=tempScore) {
+            while(j>0 && (scores[j-1]>tempScore || (scores[j-1]==tempScore && words[j-1].compareTo(temp)>=0))) {
                 words[j] = words[j-1];
                 scores[j] = scores[j-1];
                 j--;
