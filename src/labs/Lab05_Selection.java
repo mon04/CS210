@@ -2,7 +2,7 @@ package labs;
 
 import java.util.Scanner;
 
-public class Lab05 {
+public class Lab05_Selection {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
@@ -12,7 +12,14 @@ public class Lab05 {
             words[i] = scan.nextLine();
         }
 
-        /*// Selection-sort
+        selectionSort(words);
+
+        for(String w: words) {
+            System.out.println(w);
+        }
+    }
+
+    public static void selectionSort(String[] words) {
         for(int i=0; i<words.length; i++) {
             int min = i;
             for(int j=i+1; j<words.length; j++) {
@@ -21,19 +28,7 @@ public class Lab05 {
                 }
             }
             swap(i, min, words);
-        }*/
-
-        // Insertion-sort
-        for(int i=1; i<words.length; i++) {
-            if(scrabbleScore(words[i]) < scrabbleScore(words[i-1])) {
-                String ins = words[i];
-            }
         }
-
-        for(String word: words) {
-            System.out.println(word);
-        }
-
     }
 
     public static int scrabbleScore(String word) {

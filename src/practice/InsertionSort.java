@@ -11,12 +11,13 @@ public class InsertionSort {
             System.out.println(array(nums,i));
 
             int temp = nums[i];
-            int j = i;
 
+            int j = i;
             while(j>0 && nums[j-1]>=temp) {
                 nums[j] = nums[j-1]; //shift nums[j-1] to the right:
                 j--;
             }
+
             nums[j] = temp; //insert temp at the empty position:
         }
 
