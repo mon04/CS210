@@ -1,8 +1,8 @@
-package labs;
+package labs.solutions;
 
 import java.util.Scanner;
 
-public class Lab05_Selection {
+public class Lab05_Insertion {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
@@ -12,27 +12,36 @@ public class Lab05_Selection {
             words[i] = scan.nextLine();
         }
 
-        selectionSort(words);
+        insertionSort(words);
 
         for(String w: words) {
             System.out.println(w);
         }
     }
 
-    public static void selectionSort(String[] words) {
-        for(int i=0; i<words.length; i++) {
-            int min = i;
-            for(int j=i+1; j<words.length; j++) {
+    public static void insertionSort(String[] words) {
 
-                int scoreJ = scrabbleScore(words[j]);
-                int scoreMin = scrabbleScore(words[min]);
-
-                if((scoreJ < scoreMin) || (scoreJ == scoreMin && words[j].compareTo(words[min]) < 0)) {
-                    min = j;
-                }
-            }
-            swap(i, min, words);
+        int[] scores = new int[words.length];
+        for(int i = 0; i < scores.length; i++) {
+            scores[i] = scrabbleScore(words[i]);
         }
+
+        for(int i=1; i<words.length; i++) {
+
+            String temp = words[i];
+            int tempScore = scores[i];
+
+            int j = i;
+            while(j>0 && (scores[j-1]>tempScore || (scores[j-1]==tempScore && words[j-1].compareTo(temp)>=0))) {
+                words[j] = words[j-1];
+                scores[j] = scores[j-1];
+                j--;
+            }
+
+            words[j] = temp;
+            scores[j] = tempScore;
+        }
+
     }
 
     public static int scrabbleScore(String word) {
@@ -67,13 +76,5 @@ public class Lab05_Selection {
             //System.out.println(score);
         }
         return score;
-    }
-
-    public static void swap(int i, int j, String[] a) {
-        if(i != j) {
-            String temp = a[i];
-            a[i] = a[j];
-            a[j] = temp;
-        }
     }
 }

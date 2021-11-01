@@ -1,8 +1,8 @@
-package labs;
+package labs.solutions;
 
 import java.util.Scanner;
 
-public class Lab05_Insertion {
+public class Lab05_Bubble {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
@@ -12,36 +12,25 @@ public class Lab05_Insertion {
             words[i] = scan.nextLine();
         }
 
-        insertionSort(words);
+        bubbleSort(words);
 
         for(String w: words) {
             System.out.println(w);
         }
     }
 
-    public static void insertionSort(String[] words) {
+    public static void bubbleSort(String[] words) {
+        for(int i = 0; i < words.length; i++) {
+            for(int j = 1; j < words.length-i; j++) {
 
-        int[] scores = new int[words.length];
-        for(int i = 0; i < scores.length; i++) {
-            scores[i] = scrabbleScore(words[i]);
-        }
+                int score1 = scrabbleScore(words[j]);
+                int score2 = scrabbleScore(words[j-1]);
 
-        for(int i=1; i<words.length; i++) {
-
-            String temp = words[i];
-            int tempScore = scores[i];
-
-            int j = i;
-            while(j>0 && (scores[j-1]>tempScore || (scores[j-1]==tempScore && words[j-1].compareTo(temp)>=0))) {
-                words[j] = words[j-1];
-                scores[j] = scores[j-1];
-                j--;
+                if((score1 < score2) || (score1 == score2 && words[j].compareTo(words[j-1]) < 0)) {
+                    swap(j-1, j, words);
+                }
             }
-
-            words[j] = temp;
-            scores[j] = tempScore;
         }
-
     }
 
     public static int scrabbleScore(String word) {
@@ -76,5 +65,13 @@ public class Lab05_Insertion {
             //System.out.println(score);
         }
         return score;
+    }
+
+    public static void swap(int i, int j, String[] a) {
+        if(i != j) {
+            String temp = a[i];
+            a[i] = a[j];
+            a[j] = temp;
+        }
     }
 }

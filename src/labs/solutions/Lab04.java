@@ -1,4 +1,4 @@
-package labs;
+package labs.solutions;
 
 import java.util.Scanner;
 

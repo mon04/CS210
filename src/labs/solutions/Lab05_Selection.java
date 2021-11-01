@@ -1,8 +1,8 @@
-package labs;
+package labs.solutions;
 
 import java.util.Scanner;
 
-public class Lab05_Bubble {
+public class Lab05_Selection {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
@@ -12,24 +12,26 @@ public class Lab05_Bubble {
             words[i] = scan.nextLine();
         }
 
-        bubbleSort(words);
+        selectionSort(words);
 
         for(String w: words) {
             System.out.println(w);
         }
     }
 
-    public static void bubbleSort(String[] words) {
-        for(int i = 0; i < words.length; i++) {
-            for(int j = 1; j < words.length-i; j++) {
+    public static void selectionSort(String[] words) {
+        for(int i=0; i<words.length; i++) {
+            int min = i;
+            for(int j=i+1; j<words.length; j++) {
 
-                int score1 = scrabbleScore(words[j]);
-                int score2 = scrabbleScore(words[j-1]);
+                int scoreJ = scrabbleScore(words[j]);
+                int scoreMin = scrabbleScore(words[min]);
 
-                if((score1 < score2) || (score1 == score2 && words[j].compareTo(words[j-1]) < 0)) {
-                    swap(j-1, j, words);
+                if((scoreJ < scoreMin) || (scoreJ == scoreMin && words[j].compareTo(words[min]) < 0)) {
+                    min = j;
                 }
             }
+            swap(i, min, words);
         }
     }
 
