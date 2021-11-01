@@ -1,5 +1,5 @@
 ## Lab 4 - Monte Carlo Simulation
-*19 October 21*
+*19 October 2021*
 
 ### Problem Statement
 <!---Problem Statement here--->
