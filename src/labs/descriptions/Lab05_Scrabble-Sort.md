@@ -1,4 +1,4 @@
-## Lab 5 - Sorting
+## Lab 5 - Scrabble Sort
 *2 November 2021*
 
 ### Problem Statement
