@@ -4,16 +4,11 @@ import java.util.Scanner;
 
 public class Lab06 {
     public static void main(String[] args) {
-
         Scanner scan=new Scanner(System.in);
-
         int n = Integer.parseInt(scan.nextLine());
         Stack stack = new Stack(n);
-
         for(int i=0; i < n; i++) {
-
             String command = scan.nextLine();
-
             if(command.equals("POP")) {
                 if(!stack.isEmpty()) stack.pop();
             } else {
@@ -21,17 +16,14 @@ public class Lab06 {
                         Long.parseLong(command.substring(5))
                 );
             }
-
             //System.out.println(stack);
         }
-
         scan.close();
         System.out.println(stack.peek());
     }
 }
 
 class Stack {
-
     private int maxSize;
     private long[] stackArray;
     private int top;
