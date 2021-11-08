@@ -9,26 +9,24 @@ public class Lab06 {
 
         int n = Integer.parseInt(scan.nextLine());
         Stack stack = new Stack(n);
+
         for(int i=0; i < n; i++) {
+
             String command = scan.nextLine();
-            execute(command, stack);
-        }
 
-        System.out.println(stack.peek());
-    }
-
-    public static void execute(String command, Stack stack) {
-        if(command.equals("POP")) {
-            if(!stack.isEmpty()) {
-                stack.pop();
+            if(command.equals("POP")) {
+                if(!stack.isEmpty()) stack.pop();
+            } else {
+                stack.push(
+                        Long.parseLong(command.substring(5))
+                );
             }
+
+            //System.out.println(stack);
         }
-        else {
-            stack.push(
-                    Long.parseLong(command.substring(5))
-            );
-        }
-        //System.out.println(stack);
+
+        scan.close();
+        System.out.println(stack.peek());
     }
 }
 
@@ -56,16 +54,8 @@ class Stack {
         return stackArray[top];
     }
 
-    public void makeEmpty() {
-        top=-1;
-    }
-
     public boolean isEmpty() {
         return top < 0;
-    }
-
-    public boolean isFull() {
-        return top == maxSize;
     }
 
     public String toString() {
