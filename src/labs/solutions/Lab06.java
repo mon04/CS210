@@ -19,7 +19,12 @@ public class Lab06 {
             //System.out.println(stack);
         }
         scan.close();
-        System.out.println(stack.peek());
+        if(stack.isEmpty()) {
+            System.out.println("empty");
+        }
+        else {
+            System.out.println(stack.peek());
+        }
     }
 }
 
