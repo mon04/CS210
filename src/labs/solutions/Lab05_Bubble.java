@@ -15,12 +15,13 @@ public class Lab05_Bubble {
         bubbleSort(words);
 
         for(String w: words) {
-            System.out.println(w);
+            System.out.println(w+" = "+scrabbleScore(w));
         }
     }
 
     public static void bubbleSort(String[] words) {
         for(int i = 0; i < words.length; i++) {
+            boolean sorted = true;
             for(int j = 1; j < words.length-i; j++) {
 
                 int score1 = scrabbleScore(words[j]);
@@ -28,8 +29,10 @@ public class Lab05_Bubble {
 
                 if((score1 < score2) || (score1 == score2 && words[j].compareTo(words[j-1]) < 0)) {
                     swap(j-1, j, words);
+                    sorted = false;
                 }
             }
+            if(sorted) return;
         }
     }
 
