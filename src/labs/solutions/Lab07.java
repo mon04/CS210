@@ -4,8 +4,9 @@ import java.util.Scanner;
 
 public class Lab07 {
     public static void main(String[] args) {
+
         Scanner scan = new Scanner(System.in);
-        System.out.println(5/2);
+
         String allCommands = "";
         while(scan.hasNextLine()) {
             allCommands += ";" + scan.nextLine();
