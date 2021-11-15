@@ -74,7 +74,8 @@ class Queue {
     public String getMiddleValue() {
         int i = (front+(quantity/2))%capacity;
         if(quantity%2 == 0) {
-            i--;
+            if(i != 0) i--;
+            else i = capacity;
         }
         //System.out.println("The middle index is: "+i);
         return values[i];
