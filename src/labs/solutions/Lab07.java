@@ -30,9 +30,16 @@ public class Lab07 {
         if(q.isEmpty()) {
             System.out.println("empty");
         } else {
-            //q.printFullArray();
-            //System.out.println(q);
-            System.out.println(q.getMiddleValue());
+            int size = q.size();
+            int i = size/2;
+            if(size%2==0) {
+                i--;
+            }
+            while(i>0) {
+                q.remove();
+                i--;
+            }
+            System.out.println(q.remove());
         }
     }
 }
@@ -80,20 +87,16 @@ class Queue {
         return null;
     }
 
-    public String getMiddleValue() {
-        int i = front+(size/2);
-        if(size%2 == 0) {
-            return values[--i];
-        }
-        return values[i];
-    }
-
     public boolean isFull() {
         return size == capacity;
     }
 
     public boolean isEmpty() {
         return size == 0;
+    }
+
+    public int size() {
+        return size;
     }
 
     public String toString() {
