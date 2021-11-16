@@ -2,7 +2,7 @@ package labs.solutions;
 
 import java.util.Scanner;
 
-public class Lab07_NoMod {
+public class Lab07_Modulo {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
@@ -27,11 +27,9 @@ public class Lab07_NoMod {
                 q.insert(value);
             }
             System.out.println(q);
-            q.printFullArray();
-            System.out.println("----------------------------------------------------------------");
+            q.printArray();
         }
-
-        System.out.println("The middle value is: "+q.getMiddleValue());
+        System.out.println(q.getMiddleValue());
     }
 }
 
@@ -52,9 +50,7 @@ class Queue1 {
     }
 
     public boolean insert(String v) {
-        if(isFull()) {
-            return false;
-        }
+        if(isFull()) { return false; }
         if(rear == capacity-1) { rear=-1; }
         rear++;
         values[rear]=v;
@@ -79,13 +75,21 @@ class Queue1 {
     }
 
     public String getMiddleValue() {
-        int i = front+(quantity/2);
+        int i = (front+(quantity/2))%capacity;
         if(quantity%2 == 0) {
             if(i != 0) i--;
             else i = capacity;
         }
-        //System.out.println("The middle index is: "+i);
+        System.out.println("The middle index is: "+i);
         return values[i];
+    }
+
+    public void printArray() {
+        String out = "[";
+        for(String v: values) {
+            out += v+", ";
+        }
+        System.out.println(out.substring(0,out.length()-2)+"]");
     }
 
     public boolean isFull() {
@@ -101,20 +105,14 @@ class Queue1 {
         if(quantity == 0) return "[]";
         if(quantity == 1) return "["+peek()+"]";
         String out = "[";
-        int i = front;
-        while(i <= rear) {
+        int i=front;
+        while(i != (rear+1)%capacity) {
             out += values[i] + ", ";
             i++;
+            if(i == capacity) {
+                i=0;
+            }
         }
-        return out.substring(0, out.length()-2) + "]";
+        return out.substring(0,out.length()-2) + "]";
     }
-
-    public void printFullArray() {
-        String out = "[";
-        for(String v: values) {
-            out += v+", ";
-        }
-        System.out.println(out.substring(0,out.length()-2)+"]");
-    }
-
 }

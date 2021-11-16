@@ -7,29 +7,33 @@ public class Lab07 {
 
         Scanner scan = new Scanner(System.in);
 
-        String allCommands = "";
+        String fullInput = "";
         while(scan.hasNextLine()) {
-            allCommands += ";" + scan.nextLine();
+            fullInput += ";" + scan.nextLine();
         }
-        String[] commands = allCommands.substring(1).split(";");
+        scan.close();
+        String[] commands = fullInput.substring(1).split(";");
 
         Queue q = new Queue(commands.length);
 
         for(String command : commands) {
-            System.out.println(command);
+            //System.out.println(command);
             if(command.equals("REMOVE")) {
                 if(!q.isEmpty()) {
                     q.remove();
                 }
+            } else {
+                q.insert(command.split(" ")[1]);
             }
-            else {
-                String value = command.split(" ")[1];
-                q.insert(value);
-            }
-            System.out.println(q);
-            q.printArray();
         }
-        System.out.println(q.getMiddleValue());
+
+        if(q.isEmpty()) {
+            System.out.println("empty");
+        } else {
+            //q.printFullArray();
+            //System.out.println(q);
+            System.out.println(q.getMiddleValue());
+        }
     }
 }
 
@@ -39,22 +43,24 @@ class Queue {
     private String[] values;
     private int front;
     private int rear;
-    private int quantity;
+    private int size;
 
-    public Queue(int maxSize) {
-        this.capacity=maxSize;
-        values=new String[maxSize];
+    public Queue(int capacity) {
+        this.capacity=capacity;
+        values=new String[capacity];
         front=0;
         rear=-1;
-        quantity=0;
+        size=0;
     }
 
     public boolean insert(String v) {
-        if(isFull()) { return false; }
+        if(isFull()) {
+            return false;
+        }
         if(rear == capacity-1) { rear=-1; }
         rear++;
         values[rear]=v;
-        quantity++;
+        size++;
         return true;
     }
 
@@ -63,7 +69,7 @@ class Queue {
         String temp = values[front];
         front++;
         if(front == capacity) { front=0; }
-        quantity--;
+        size--;
         return temp;
     }
 
@@ -75,44 +81,39 @@ class Queue {
     }
 
     public String getMiddleValue() {
-        int i = (front+(quantity/2))%capacity;
-        if(quantity%2 == 0) {
-            if(i != 0) i--;
-            else i = capacity;
+        int i = front+(size/2);
+        if(size%2 == 0) {
+            return values[--i];
         }
-        System.out.println("The middle index is: "+i);
         return values[i];
     }
 
-    public void printArray() {
+    public boolean isFull() {
+        return size == capacity;
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    public String toString() {
+        if(size == 0) return "[]";
+        if(size == 1) return "["+peek()+"]";
+        String out = "[";
+        int i = front;
+        while(i <= rear) {
+            out += values[i] + ", ";
+            i++;
+        }
+        return out.substring(0, out.length()-2) + "]";
+    }
+
+    /*public void printFullArray() {
         String out = "[";
         for(String v: values) {
             out += v+", ";
         }
         System.out.println(out.substring(0,out.length()-2)+"]");
-    }
+    }*/
 
-    public boolean isFull() {
-        return quantity == capacity;
-    }
-
-    public boolean isEmpty() {
-        return quantity == 0;
-    }
-
-    @Override
-    public String toString() {
-        if(quantity == 0) return "[]";
-        if(quantity == 1) return "["+peek()+"]";
-        String out = "[";
-        int i=front;
-        while(i != (rear+1)%capacity) {
-            out += values[i] + ", ";
-            i++;
-            if(i == capacity) {
-                i=0;
-            }
-        }
-        return out.substring(0,out.length()-2) + "]";
-    }
 }
