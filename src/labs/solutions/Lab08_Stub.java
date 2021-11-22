@@ -28,6 +28,11 @@ public class Lab08_Stub {
         }
         System.out.println(search(mylist));
     }
+
+    public static int search(LinkedList list) {
+        //Code here
+        return -1;
+    }
 }
 
 class Link{
