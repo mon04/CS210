@@ -26,19 +26,13 @@ public class Lab08 {
             mylist.first=array[0];
             mylist.last=array[num-1];
         }
-        System.out.println(mylist);
-        System.out.println("Answer: "+search(mylist));
+        System.out.println(search(mylist));
     }
 
     public static int search(LinkedList list) {
-        Link link = list.first;
         int min = Integer.MAX_VALUE;
-
-        for(int i=0; i < 2; i++) {
-            min = list.smallestValue();
-            list.removeLink(min);
-        }
-        return min;
+        list.removeLink(list.getSmallestValue());
+        return list.removeLink(list.getSmallestValue());
     }
 }
 
@@ -51,14 +45,6 @@ class Link{
         data=input;
         next=null;
         previous=null;
-    }
-
-    public void setNext(Link next) {
-        this.next = next;
-    }
-
-    public void setPrevious(Link previous) {
-        this.previous = previous;
     }
 }
 
@@ -86,51 +72,55 @@ class LinkedList {
         }
     }
 
-    public void removeLink(int key) {
-        System.out.println("Remove "+key+":");
+    public int removeLink(int key) {
+
         //Catch empty list:
-        if(isEmpty()) return;
+        if(isEmpty()) { return -1; }
 
         //Catch 1-long list:
-        else if(first.next == null) {
+        Link link = first;
+        if(first.next == null) {
             if(first.data == key) first=null;
             System.out.println(this);
-            return;
+            return link.data;
         }
 
-        Link link = first;
+        //List is longer than 1:
         while(link != null) {
             if(link.data == key) {
-                //Link is in middle:
+
                 if(link != first && link != last) {
                     link.previous.next = link.next;
                     link.next.previous = link.previous;
-                    System.out.println(this);
-                    return;
+                    return link.data;
                 }
-                //Link is at head:
+
                 else if(link == first) {
                     link.next.previous = null;
                     first = link.next;
-                    System.out.println(this);
-                    return;
+                    return link.data;
                 }
-                //Link is at tail:
-                else {//link == last:
+
+                else {
                     link.previous.next = null;
                     last = link.previous;
-                    System.out.println(this);
-                    return;
+                    return link.data;
                 }
+
             }
             link = link.next;
         }
-        System.out.println("Error removing: no match found for key: "+key);
+        //Link with value == key not found:
+        return -1;
     }
 
-    public int smallestValue() {
+    public int getSmallestValue() {
+        if(isEmpty()) { return -1; }
+        if(first==last) { return first.data; }
+
         Link link = first;
         int min = Integer.MAX_VALUE;
+
         while(link != null) {
             if(link.data < min) {
                 min = link.data;

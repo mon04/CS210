@@ -1,4 +1,4 @@
-package labs.solutions;
+package labs.stubs;
 
 import java.util.*;
 
