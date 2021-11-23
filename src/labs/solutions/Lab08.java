@@ -30,9 +30,17 @@ public class Lab08 {
     }
 
     public static int search(LinkedList list) {
-        int min = Integer.MAX_VALUE;
-        list.removeLink(list.getSmallestValue());
-        return list.removeLink(list.getSmallestValue());
+        Link node = list.first;
+        while(node != null) {
+            //Mismatched firsts/nexts:
+            if((node != list.first && node.previous.next != node) || (node != list.last && node.next.previous != node)) {
+                return 0;
+            }
+            node = node.next;
+        }
+        int firstSmallest = list.getSmallestValue();
+        list.removeLink(firstSmallest);
+        return list.getSmallestValue(firstSmallest);
     }
 }
 
@@ -72,17 +80,16 @@ class LinkedList {
         }
     }
 
-    public int removeLink(int key) {
+    public void removeLink(int key) {
 
         //Catch empty list:
-        if(isEmpty()) { return -1; }
+        if(isEmpty()) { return; }
 
         //Catch 1-long list:
         Link link = first;
         if(first.next == null) {
             if(first.data == key) first=null;
-            System.out.println(this);
-            return link.data;
+            return;
         }
 
         //List is longer than 1:
@@ -92,26 +99,24 @@ class LinkedList {
                 if(link != first && link != last) {
                     link.previous.next = link.next;
                     link.next.previous = link.previous;
-                    return link.data;
+                    return;
                 }
 
                 else if(link == first) {
                     link.next.previous = null;
                     first = link.next;
-                    return link.data;
+                    return;
                 }
 
                 else {
                     link.previous.next = null;
                     last = link.previous;
-                    return link.data;
+                    return;
                 }
 
             }
             link = link.next;
         }
-        //Link with value == key not found:
-        return -1;
     }
 
     public int getSmallestValue() {
@@ -123,6 +128,22 @@ class LinkedList {
 
         while(link != null) {
             if(link.data < min) {
+                min = link.data;
+            }
+            link = link.next;
+        }
+        return min;
+    }
+
+    public int getSmallestValue(int restrict) {
+        if(isEmpty()) { return -1; }
+        if(first==last) { return first.data; }
+
+        Link link = first;
+        int min = Integer.MAX_VALUE;
+
+        while(link != null) {
+            if(link.data > restrict && link.data < min) {
                 min = link.data;
             }
             link = link.next;
