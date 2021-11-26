@@ -32,7 +32,7 @@ public class Lab08 {
     public static int search(LinkedList list) {
         Link node = list.first;
         while(node != null) {
-            //Mismatched firsts/nexts:
+            //Mismatched relations between node and its previous/next:
             if((node != list.first && node.previous.next != node) || (node != list.last && node.next.previous != node)) {
                 return 0;
             }
