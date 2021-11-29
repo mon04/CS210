@@ -15,6 +15,7 @@ public class Lab09_Part3 {
     }
 
     public static float iterative(int classSize) {
+        //Iterative method (Monte Carlo) for probability >=1 pairs share a birthday
         int pairs = 0;
         int sims = 1000000;
 
