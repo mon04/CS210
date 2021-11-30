@@ -1,4 +1,4 @@
-## Lab 9 - Recursion - 2. Compound Interest
+## Lab 9 - Recursion - 2. Compound interest
 *30 November 2021*
 
 ### Problem Statement
@@ -7,16 +7,19 @@ Write a recursive method that takes in a bank account balance *x*, an interest r
 
 ### Input format
 <!---Input format here--->
-The main methid, which is already written, takes in a bank account balance as a double, *x*, interest percentage rate as a double, *i*, and the number of years for which it is being invested, *y*.
+The main method, which is already written, takes in a bank account balance as a double, *x*, interest percentage rate as a double, *i*, and the number of years for which it is being invested, *y*.
 
 ### Output format
 <!---Output format here--->
 A double representing how much the bank account is worth after *y* years, correct to two decimal places.
 
 ### Constraints
-0 ≤ *y* ≤ 30
-0.0 ≤ *i* ≤ 100.0
-0 ≤ *x* ≤ 1000000
+*0 ≤ y ≤ 30*
+
+*0 ≤ i ≤ 100*
+
+*0 ≤ x ≤ 1000000*
+
 
 ### Sample Input
 ```
