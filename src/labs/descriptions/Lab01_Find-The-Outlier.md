@@ -14,13 +14,21 @@ An integer representing the outlier of the three, or ```NA``` if there is no out
 -1000 ≤ *A, B, C* ≤ 1000
 
 ### Sample Input 0
-```6 3 9```
+```
+6 3 9
+```
 
 ### Sample Output 0
-```NA```
+```
+NA
+```
 
 ### Sample Input 1
-```15 18 3```
+```
+15 18 3
+```
 
 ### Sample Output 1
-```3```
+```
+3
+```
