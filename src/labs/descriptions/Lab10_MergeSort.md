@@ -3,11 +3,11 @@
 
 ### Problem Statement
 <!---Problem Statement here--->
-The goal is to sort a long list of words by special order. The special order is as follows. All the words are sorted by the total sum of all the ASCII values for each character in the word. The words that are printed first will be those with the lowest ASCII sum. For example, the ASCII value for *'a'* is 97, while that for *'n'* is 110, so the word *'an'* gets an ASCII sum of 207, which is very low, so it will be one of the first words printed out.
+The goal is to sort a long list of words by special order. The special order is as follows. All the words are sorted by the total sum of all the ASCII values for each character in the word. The words that are printed first will be those with the lowest ASCII sum. For example, the ASCII value for *'a'* is 97, while that for *'n'* is 110, so the word `an` gets an ASCII sum of 207, which is very low, so it will be one of the first words printed out.
 
-For words that have the exact same ASCII sum (e.g. *'dog'* and *'god'*) these should be sorted REVERSE alphabetically (so *'god'* would come before *'dog'* since it's nearer the end of the dictionary).
+For words that have the exact same ASCII sum (e.g. `dog` and `god`) these should be sorted REVERSE alphabetically (so `god` would come before `dog` since it's nearer the end of the dictionary).
 
-**Hint:** you can cast a character into an ASCII value like this: ```(int)mystring.charAt(0)```.
+**Hint:** you can cast a character into an ASCII value like this: `(int)mystring.charAt(0)`.
 
 ### Input format
 <!---Input format here--->
