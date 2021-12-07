@@ -7,7 +7,7 @@ public class Lab10 {
     public static void main(String[] args) throws FileNotFoundException {
         //long start = System.currentTimeMillis();
         Scanner scan = new Scanner(System.in);
-        String[] input = new String[scan.nextInt()];
+        String[] input = new String[scan.nextInt()];scan.nextLine();
         for(int i=0; i < input.length; i++){
             input[i] = scan.nextLine();
         }
