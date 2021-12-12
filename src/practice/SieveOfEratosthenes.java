@@ -7,7 +7,7 @@ public class SieveOfEratosthenes {
 
         //An algorithm to find the subset of all primes < a max bound
         int max = 120;
-        boolean isPrime[] = new boolean[max]; //'isPrime[i]' will be true where 'i' is prime
+        boolean[] isPrime = new boolean[max]; //'isPrime[i]' will be true where 'i' is prime
 
         //Set all but {0,1} true by default
         isPrime[0]=false;
