@@ -19,34 +19,28 @@ public class Lab11 {
         // find pair of hashes with least difference and print first one
         int index1 = -1;
         int index2 = -1;
-        int minDiff = Integer.MAX_VALUE;
+        int maxSim = Integer.MIN_VALUE;
         for(int i=0; i < input.length -1; i++) {
             for(int j=i+1; j < input.length; j++) {
-                int currentDiff = differenceBetween(hash[i], hash[j]);
-                if(currentDiff < minDiff) {
+                int sim = similarity(hash[i], hash[j]);
+                if(sim > maxSim) {
                     index1 = i;
                     index2 = j;
-                    minDiff = currentDiff;
+                    maxSim = sim;
                 }
             }
         }
         System.out.println(hash[index1]);
     }
 
-    public static int differenceBetween(String a, String b) {
-        // digit-by-digit difference between two Strings
-        int diff = 0;
-        int i = 0;
-        while(i < a.length() || i < b.length()) {
-            if(i >= a.length() || i >= b.length()) {
-                diff++;
-            }
-            else if(a.charAt(i) != b.charAt(i)) {
-                diff++;
-            }
+    public static int similarity(String a, String b) {
+        int i=0;
+        int sim=0;
+        while(i < a.length() && i < b.length()) {
+            if(a.charAt(i) == b.charAt(i)) sim++;
             i++;
         }
-        return diff;
+        return sim;
     }
 
     public static String sha256(String input) {
